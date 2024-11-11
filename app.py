@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from sklearn.preprocessing import StandardScaler  # For scaling the features, if necessary
+from sklearn.model_selection import train_test_split  # For splitting dataset (if needed)
 
 st.write("""
 # Heart disease Prediction App
