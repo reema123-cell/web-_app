@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import os
+
 
 st.write("""
 # Heart disease Prediction App
@@ -61,12 +61,7 @@ df = df[:1]
 st.write(input_df)
 # Reads in saved classification model
 
-if os.path.exists('Random_forest_model.pkl'):
-    load_clf = pickle.load(open('Random_forest_model.pkl', 'rb'))
-else:
-    st.error("Model file not found!")
-
-
+load_clf = pickle.load(open('random_forest_model.pkl', 'rb'))
 
 # Apply model to make predictions
 prediction = load_clf.predict(df)
