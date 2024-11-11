@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-
+import os
 
 st.write("""
 # Heart disease Prediction App
@@ -61,7 +61,12 @@ df = df[:1]
 st.write(input_df)
 # Reads in saved classification model
 
-load_clf = pickle.load(open('random_forest_model.pkl', 'rb'))
+load_clf = pickle.load(open(r'C:\Users\LENOVO\OneDrive\Desktop\new\random_forest_model.pkl', 'rb'))
+
+print(os.getcwd())  # Prints the current working directory
+print(os.listdir())  # Lists files in the current directory
+
+
 
 # Apply model to make predictions
 prediction = load_clf.predict(df)
